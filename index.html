@@ -3,42 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="main.css">
+    <title>DEV@Deakin</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ffc107;
+            padding-bottom: 0.5rem;
+        }
+
+        section p {
+            color: #666;
+        }
+
+        /* Hero image */
+        img {
+        display: block;
+        margin: auto;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .overlay {
+            visibility: hidden;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .image:hover + .overlay {
+            visibility: visible;
+        }
+
+        /* Avatar */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #work div p {
+            margin-top: 15px;
+        }
+
+        .mtb-30 {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .mb-15 {
+            margin-bottom: 15px;
+        }
+
+        /* Previous work */
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 700px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: white;
+            margin: 0 auto 20px auto;
+        }
+
+        .card img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card-text {
+            flex: 1;
+        }
+
+        .card-text h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .card-text p {
+            margin-bottom: 0;
+        }
+
+        /* My photos */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .image-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Welcome to DEV@Deakin</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the home section of your website.</p>
-        </section>
-
         <section id="about">
             <h2>About</h2>
-            <p>This is the about section of your website.</p>
+
+            <div class="image-container">
+                <img class="image" src="images/40644-900x455-deakin-students-law-buiiding.jpg">
+                <span class="overlay">Hello, my name is Simon.</span>
+            </div>
+        </section>
+
+        <section id="work">
+            <h2>Work</h2>
+
+            <div>
+                <img class="avatar" src="images/480417958_1399017581255262_8043930092373033550_n.jpg">
+                <p class="text-center">I'm a full-stack developer based in the East Gippsland region of Victoria, Australia.</p>
+            </div>
+            <h3 class="text-center mtb-30">Here's some projects I've worked on so far</h3>
+
+            <div class="card">
+                <img src="images/335043535_1510323372828220_757518520767070734_n.jpg" alt="Regional Mental Health Australia (RMHA) Inc.">
+                <div class="card-text">
+                    <h3>Regional Mental Health Australia (RMHA) Inc.</h3>
+                    <p>This is a not-for-profit I established in 2020 to raise funds and support mental health initiatives, focusing on people living in rural and regional Australia. Rather than providing clinical treatment directly, RMHA raises money and distributes it to community organisations that deliver mental health services and advocacy.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/channels4_profile.jpg" alt="Mindset Movie Reviews">
+                <div class="card-text">
+                    <h3>Mindset Movie Reviews</h3>
+                    <p>Mindset Movie Reviews is a movie review project I started in 2024. It is focused on creating and publishing movie reviews as YouTube videos.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/words-with-freinds-chear-logo.png" alt="Words With Friend Cheat">
+                <div class="card-text">
+                    <h3>Words With Friend Cheat</h3>
+                    <p>This site is a free online Words With Friends® word finder and anagram solver. Enter the letters on your rack (specify a prefix, suffix, or letter sequence already on the board) and playable words are generated with their projected scores. It is written in Python, HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+
+            <h3 class="text-center mtb-30">My photos</h3>
+
+            <div class="image-grid">
+                <img src="https://food.deakin.edu.au/storage/app/uploads/public/660/f3d/615/660f3d6150d32569858854.jpg" alt="Deakin Food">
+                <img src="https://universitiesaustralia.edu.au/wp-content/uploads/2018/10/Deakin-4-web-1400x933.jpg" alt="Deakin Law">
+                <img src="https://universitiesaustralia.edu.au/wp-content/uploads/2018/10/Deakin-1-web-1400x946.jpg" alt="Deakin Burwood">
+                <img src="https://woodmarsh.com.au/site/wp-content/uploads/2022/12/01_Deakin1_12074.jpg" alt="Deakin Burwood Building C">
+            </div>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>This is the contact section of your website.</p>
+
+            <div class="contact-container">
+                <p class="mb-15">If you have any questions, feedback, or would like to work together, I'd love to hear from you.</p>
+                <p><strong>Email:</strong> srbut@deakin.edu.au</p>
+                <p><strong>Phone:</strong> (+61) 0400 940 227</p>
+                <p><strong>Location:</strong> Bairnsdale, East Gippsland, Victoria</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>&copy; 2026 Simon Butler. All rights reserved.</p>
     </footer>
 
-    <script src="main.js"></script>
 </body>
 </html>
